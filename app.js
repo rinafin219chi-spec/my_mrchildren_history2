@@ -19,120 +19,154 @@ const PREFECTURES = [
 const SEED_DATA = [
   {
     id: 's01', tour: 'POPSAURUS 2012', date: '2012-04-29',
-    venue: '', prefecture: '福岡県', seat: '',
-    companions: [], rating: 0, tags: ['スタジアム'], situation: '', memo: '',
+    venue: '福岡ドーム', prefecture: '福岡県', seat: 'スタンド17列目',
+    companions: ['せのおくん'], rating: 5, tags: ['遠征','ドーム'],
+    situation: '彼氏のせのおくんと別れたけどせのおくんと行きたいがためにチケット取ったから別れても一緒に行った。ライブ終わった後、そのまま名残惜しいこともなくせのおくんとはお別れした。それからせのおくんには会ってない。',
+    memo: '初めてのMr.Childrenライブ。エソラのイントロがとってもわくわくして初めて桜井さんを見て本当にいるんだ！って興奮して言葉にならなかった',
     photos: [], ticketImage: null,
     songs: ['innocent world','終わりなき旅','Dance Dance Dance','Worlds end','GIFT','fanfare','エソラ','彩り','Everything（It\'s you）','蘇生','youthful days','365日','End of the day','ラララ','光の射す方へ','くるみ','1999年、夏、沖縄','ロックンロールは生きている','しるし','箒星','Round About～孤独の肖像～','LOVE','デルモ','祈り ～涙の軌道','Sign']
   },
   {
     id: 's02', tour: 'Stadium Tour 2015 未完', date: '2015-07-18',
-    venue: '', prefecture: '福岡県', seat: '',
-    companions: [], rating: 0, tags: ['スタジアム'], situation: '', memo: '',
+    venue: '福岡ドーム', prefecture: '福岡県', seat: 'スタンド1列目',
+    companions: ['てらさん、いずみーる、いずみーるの奥さん'], rating: 5, tags: ['遠征','ドーム'],
+    situation: '久しぶりに行けたMr.Childrenライブ\nヨーロッパ放浪して帰ってきてすぐのライブで飛行機で聴いて泣いた終わりなき旅をまたライブで聴けてすごく嬉しかった',
+    memo: '終わりなき旅のおわーりなーきたーびってめっちゃ伸ばしていて\n「りな」って叫ばれた気がして1人で舞い上がってた笑',
     photos: [], ticketImage: null,
     songs: ['Tomorrow never knows','innocent world','終わりなき旅','擬態','ニシエヒガシエ','フェイク','タガタメ','足音 〜Be Strong','未完','and I love you','光の射す方へ','ALIVE','REM','WALTZ','幻聴','Starting Over','fantasy','FIGHT CLUB','斜陽','蜘蛛の糸','I Can Make It','運命','進化論','I wanna be there','CHILDREN\'S WORLD','忘れ得ぬ人','蘇生']
   },
   {
     id: 's03', tour: 'Hall Tour 2016 虹', date: '2016-04-22',
-    venue: '', prefecture: '宮崎県', seat: '',
-    companions: [], rating: 0, tags: ['ホール','遠征'], situation: '', memo: '',
+    venue: '宮崎市民文化ホール', prefecture: '宮崎県', seat: 'ホール４階10列',
+    companions: [], rating: 5, tags: ['一人参戦','ホール'],
+    situation: '宮崎にMr.Childrenが来る。うれしすぎて前日にツアトラ見に行った。\n当時は九州の大雨の災害で開催されるかヒヤヒヤだった。無事開催されてよかったし、来られなかったファンへの桜井さんからの手紙に私も泣いた。',
+    memo: 'まさかの地元開催で幸せすぎた。あとセトリが私が好きなものが詰め込まれていて私のためのライブかと勘違いした。\nあと親にもお土産でライブTシャツ買った。今でもそれを着て畑仕事したりしてる。',
     photos: [], ticketImage: null,
     songs: ['Tomorrow never knows','GIFT','彩り','名もなき詩','足音 〜Be Strong','くるみ','HERO','CANDY','優しい歌','血の管','WALTZ','虹の彼方へ','クラスメイト','マシンガンをぶっ放せ','傘の下の君に告ぐ','PIANO MAN','もっと','通り雨','あんまり覚えてないや','妄想満月','水上バス','You make me happy','お迦話','こころ','忙しい僕ら']
   },
   {
     id: 's04', tour: '2017 Thanksgiving 25', date: '2017-07-15',
-    venue: '', prefecture: '福岡県', seat: '',
-    companions: [], rating: 0, tags: [], situation: '', memo: '',
+    venue: '福岡ドーム', prefecture: '福岡県', seat: 'スタンド32列ぐらい',
+    companions: ['てらさん'], rating: 5, tags: ['遠征','ドーム'],
+    situation: '仕事や恋愛（特に恋愛）になんだか焦っていたころ\nあのとき焦って変な人と結婚しなくて本当によかった',
+    memo: 'てらさんがスマホ忘れてまず集合場所のパルコの迷子案内で私の名前が呼ばれるハプニングから始まった。とにかく会えてよかった笑\nあとフォトスポットがたくさんあって楽しかったな。',
     photos: [], ticketImage: null,
     songs: ['Tomorrow never knows','innocent world','終わりなき旅','Dance Dance Dance','GIFT','fanfare','エソラ','名もなき詩','ニシエヒガシエ','1999年、夏、沖縄','蘇生','youthful days','himawari','シーソーゲーム〜勇敢な恋の歌〜','車の中でかくれてキスしよう','CROSS ROAD','everybody goes','CENTER OF UNIVERSE','思春期の夏〜君との恋が今も牧場に〜','掌','ランニングハイ','ヒカリノアトリエ','抱きしめたい','Any','Making Songs','箒星','こんな風にひどく蒸し暑い日','君が好き']
   },
   {
     id: 's05', tour: '2017 Thanksgiving 25', date: '2017-09-09',
-    venue: '', prefecture: '熊本県', seat: '',
-    companions: [], rating: 0, tags: ['遠征'], situation: '', memo: '',
+    venue: 'えがお健康スタジアム', prefecture: '熊本県', seat: 'アリーナ15列',
+    companions: ['るなちゃん'], rating: 5, tags: ['遠征','スタジアム'],
+    situation: '仕事転職しようか悩んでいたころ。',
+    memo: '初めてのスタジアム、最後の終わりなき旅の4人で向き合って演奏している姿、himawari踊る桜井さんを肉眼で見れたこと忘れないよ。今までで1番近くて、そしてナカケーがかっちょよすぎてナカケー！！！って思わず叫んだ。普段は叫ぶキャラじゃないのに。',
     photos: [], ticketImage: null,
     songs: ['Tomorrow never knows','innocent world','終わりなき旅','Dance Dance Dance','GIFT','fanfare','エソラ','名もなき詩','ニシエヒガシエ','1999年、夏、沖縄','蘇生','Sign','HANABI','365日','himawari','Simple','CENTER OF UNIVERSE','思春期の夏〜君との恋が今も牧場に〜','掌','ランニングハイ','ヒカリノアトリエ','君がいた夏','ポケット カスタネット']
   },
   {
     id: 's06', tour: 'Tour 2018-19 重力と呼吸', date: '2018-11-24',
-    venue: '', prefecture: '大分県', seat: '',
-    companions: [], rating: 0, tags: ['遠征'], situation: '', memo: '',
+    venue: '別府ビーコンプラザ', prefecture: '大分県', seat: 'スタンド最後席だったはず',
+    companions: [], rating: 5, tags: ['一人参戦','遠征','アリーナ'],
+    situation: '7回ぐらい落選して、でも最後のトレードで当たった！落選残念会までしてもらったのにその後に当選してめちゃくちゃ喜んだ記憶。',
+    memo: '行けてよかった。singles、ヒアカム、秋がくれた切符など重力と呼吸大好きなんだけどそれだけじゃなくて花とかハルとかライブで聴いてみたかった曲目白押しで最高だった',
     photos: [], ticketImage: null,
     songs: ['海にて、心は裸になりたがる','HANABI','Dance Dance Dance','Worlds end','Monster','SINGLES','addiction','皮膚呼吸','and I love you','しるし','忘れ得ぬ人','幻聴','擬態','花 - Memento-Mori -','NOT FOUND','風と星とメビウスの輪','ハル','here comes my love','秋がくれた切符']
   },
   {
     id: 's07', tour: 'Dome Tour 2019 "Against All GRAVITY"', date: '2019-04-20',
-    venue: '', prefecture: '福岡県', seat: '',
-    companions: [], rating: 0, tags: [], situation: '', memo: '',
+    venue: '福岡ドーム', prefecture: '福岡県', seat: 'アリーナ20列目ぐらい',
+    companions: ['てらさん'], rating: 5, tags: ['遠征','ドーム'],
+    situation: '仲良くしていた人がライブの直前にCANDYを聴いて私に泣いて電話をしてきた。\nそしたらその後ライブでCANDY聴けた。桜井さん、私たちのこと見てた？',
+    memo: 'sunriseの演出が素敵だったなー。センターステージでのCANDYとロードムービーが特に印象に残っている。',
     photos: [], ticketImage: null,
     songs: ['Tomorrow never knows','innocent world','終わりなき旅','海にて、心は裸になりたがる','Sign','HANABI','Dance Dance Dance','Worlds end','名もなき詩','Monster','SINGLES','addiction','皮膚呼吸','Starting Over','everybody goes','CANDY','ロードムービー','SUNRISE','旅立ちの唄','Prelude','Your Song','himawari']
   },
   {
     id: 's08', tour: 'エントランスのエントランス', date: '2022-04-09',
-    venue: '', prefecture: '東京都', seat: '',
-    companions: [], rating: 0, tags: ['遠征'], situation: '', memo: '',
+    venue: '東京ガーデンシアター', prefecture: '東京都', seat: 'アリーナ1列目',
+    companions: [], rating: 5, tags: ['一人参戦','遠征','アリーナ'],
+    situation: 'コロナ渦中、3年ぶりのMr.Children、というかコロナ禍で久しぶりに東京来るのもびくびくしてた。そしてそれ以上に最前列ということを知りどきどきがすごかった',
+    memo: '最前列で見たMr.Childrenはとてもかっこよくて、JENの掛け声もすごく大きく聴こえて、でもマスクで声は出せなくて、とっても歯がゆい気持ちだった。当時はMr.Childrenとこと語れるチル友もいなくて1人ライブ後も噛み締めてた',
     photos: [], ticketImage: null,
     songs: ['Tomorrow never knows','innocent world','Worlds end','海にて、心は裸になりたがる','フェイク','fanfare','youthful days','ロックンロールは生きている','DANCING SHOES','others','永遠','生きろ','Any','僕らの音','Replay']
   },
   {
-    id: 's09', tour: '半世紀へのエントランス', date: '2023-04-23',
-    venue: '', prefecture: '福岡県', seat: '',
-    companions: [], rating: 0, tags: [], situation: '', memo: '',
+    id: 's09', tour: '半世紀へのエントランス', date: '2022-04-23',
+    venue: '福岡ドーム', prefecture: '福岡県', seat: 'アリーナDブロック10列目',
+    companions: ['しょうこ'], rating: 5, tags: ['遠征','ドーム'],
+    situation: 'コロナ禍でまず開催されたことにありがとうの気持ち',
+    memo: '桜井さんがGIFTの歌い始め間違えてもう一回！って言ったのがすごくチャーミングだった。行きのバスで聴いたsunriseとやわらかい風がすごく耳心地よかった記憶。グッズ売り場すごく並んでいてしょうこが先に並んで買っていてくれた。2人でライブ始まる前から終わってもずっとはしゃいだ',
     photos: [], ticketImage: null,
     songs: ['Tomorrow never knows','Dance Dance Dance','Worlds end','海にて、心は裸になりたがる','fanfare','エソラ','フェイク','タガタメ','youthful days','くるみ','Any','ロックンロールは生きている','DANCING SHOES','others','永遠','生きろ','Documentary film','LOVE はじめました','僕らの音','Replay','Brand new planet','Your Song']
   },
   {
-    id: 's10', tour: '半世紀へのエントランス', date: '2023-06-18',
-    venue: '', prefecture: '大阪府', seat: '',
-    companions: [], rating: 0, tags: ['遠征'], situation: '', memo: '',
+    id: 's10', tour: '半世紀へのエントランス', date: '2022-06-18',
+    venue: '長居スタジアム', prefecture: '大阪府', seat: 'アリーナIブロック30列目ぐらい',
+    companions: [], rating: 5, tags: ['一人参戦','遠征'],
+    situation: 'ライブ前にXで知り合ったたくさんのチル友さんと交流できたのがすごくよかった！めちゃくちゃ楽しくてライブはおまけぐらいの気持ちになってしまった',
+    memo: '今回アリーナだけど最後のブロックのほぼ最後列で全然見えず、これならスタンドの方がよかった！でもスタジアムでしか聴けない曲もあったので行って正解！',
     photos: [], ticketImage: null,
     songs: ['Tomorrow never knows','innocent world','終わりなき旅','海にて、心は裸になりたがる','Sign','HANABI','名もなき詩','ニシエヒガシエ','彩り','シーソーゲーム〜勇敢な恋の歌〜','車の中でかくれてキスしよう','光の射す方へ','DANCING SHOES','others','永遠','生きろ','Documentary film','LOVE はじめました','口笛']
   },
   {
     id: 's11', tour: 'ap bank fes \'23 〜社会と暮らしと音楽と〜', date: '2023-07-16',
-    venue: '', prefecture: '静岡県', seat: '',
-    companions: [], rating: 0, tags: ['遠征','野外'], situation: '', memo: '',
+    venue: 'つま恋', prefecture: '静岡県', seat: 'A-2ブロック',
+    companions: ['にーに、ななちゃん'], rating: 5, tags: ['遠征','野外'],
+    situation: '東京上京して初めてMr.Childrenを関東で聴ける機会だった\nめちゃくちゃ暑かった。でもあの暑さも思い出。\nJTBの派遣の仕事も始めたばかり。',
+    memo: '2日目の帰り、バスを待たずななちゃんとにーにとMr.Childrenについて話しながら帰ったのがすごく青春っぽくて楽しかった。あれから私たちのチル活は激しさを増したように思う',
     photos: [], ticketImage: null,
     songs: ['Simple','Your Song','CROSS ROAD','雨のち晴れ','ゆりかごのある丘から','口がすべって','花の匂い','pieces']
   },
   {
-    id: 's12', tour: 'グランドチャウデーション', date: '2023-12-18',
-    venue: '', prefecture: '大阪府', seat: '',
-    companions: [], rating: 0, tags: ['遠征'], situation: '', memo: '',
+    id: 's12', tour: 'グランドチャウデーション', date: '2024-12-18',
+    venue: '大阪城ホール', prefecture: '大阪府', seat: 'アリーナBブロック15列目ぐらい',
+    companions: ['たーさん'], rating: 5, tags: ['遠征','アリーナ'],
+    situation: 'この日日帰りで滋賀京都大阪行けてとっても楽しかった',
+    memo: 'この日のTomorrow never knowsがめちゃくちゃ良くてやっぱり名曲だわと感じた。多分私の中で最多聴いている曲なんだけどね。この日のがとてもよかったの',
     photos: [], ticketImage: null,
     songs: ['Tomorrow never knows','終わりなき旅','海にて、心は裸になりたがる','HANABI','ラララ','タガタメ','HERO','Brand new planet']
   },
   {
-    id: 's13', tour: 'Prelive 2024', date: '2024-06-24',
-    venue: '', prefecture: '東京都', seat: '',
-    companions: [], rating: 0, tags: ['遠征'], situation: '', memo: '',
+    id: 's13', tour: 'miss you プレライブ 2024', date: '2024-06-24',
+    venue: '東京ガーデンシアター', prefecture: '東京都', seat: 'アリーナA9列目ぐらい',
+    companions: ['たーさん'], rating: 5, tags: ['アリーナ'],
+    situation: 'ずっと当たらなかったmiss youライブにやっと行けて当選の日号泣',
+    memo: 'REMが聴けるとは！つよがりが聴けるなんて！靴ひも？！End of the day,未完ー！！！と驚きの連続だった',
     photos: [], ticketImage: null,
     songs: ['Sign','End of the day','未完','Everything（It\'s you）','アンダーシャツ','つよがり','靴ひも','The song of praise','I MISS YOU','Fifty\'s map 〜おとなの地図','Are you sleeping well without me?','LOST','アート＝神の見えざる手','雨の日のパレード','We have no time','ケモノミチ','記憶の旅人']
   },
   {
     id: 's14', tour: 'miss you arena tour', date: '2024-07-12',
-    venue: '', prefecture: '神奈川県', seat: '',
-    companions: [], rating: 0, tags: ['遠征','アリーナ'], situation: '', memo: '',
+    venue: '横浜アリーナ', prefecture: '神奈川県', seat: 'アリーナ20列目',
+    companions: ['たーさん'], rating: 5, tags: ['アリーナ'],
+    situation: 'トレードで幸運にも行けてありがたやありがたや',
+    memo: 'めっちゃ良席。肉眼でMr.Children真正面で見えた。in the pocketの今日からまた新しいあなたが始まるで明日からまたがんばろうと思った。次の日スキマフェスだったわ',
     photos: [], ticketImage: null,
     songs: ['終わりなき旅','Sign','365日','End of the day','未完','Everything（It\'s you）','アンダーシャツ','つよがり','靴ひも','The song of praise','優しい歌','血の管','REM','I MISS YOU','Fifty\'s map 〜おとなの地図','Are you sleeping well without me?','LOST','アート＝神の見えざる手','雨の日のパレード','We have no time','ケモノミチ','記憶の旅人','Hallelujah','叫び 祈り','青いリンゴ','Party is over','in the pokect']
   },
   {
     id: 's15', tour: 'miss you arena tour', date: '2024-10-27',
-    venue: '', prefecture: '神奈川県', seat: '',
-    companions: [], rating: 0, tags: ['遠征','アリーナ'], situation: '', memo: '',
+    venue: 'Kアリーナ', prefecture: '神奈川県', seat: 'アリーナ25列ぐらい',
+    companions: ['たーさん'], rating: 0, tags: ['アリーナ'],
+    situation: '追加公演！前日はゆずライブにいってホクホクしていた2日間',
+    memo: '本公演とセトリは一緒だけどやはりKアリーナは音響がよろしい\nアンコール前のみんなで讃えあうかんじよかったね',
     photos: [], ticketImage: null,
     songs: ['終わりなき旅','Sign','365日','End of the day','未完','Everything（It\'s you）','アンダーシャツ','つよがり','靴ひも','The song of praise','優しい歌','血の管','REM','I MISS YOU','Fifty\'s map 〜おとなの地図','Are you sleeping well without me?','LOST','アート＝神の見えざる手','雨の日のパレード','We have no time','ケモノミチ','記憶の旅人','Hallelujah','叫び 祈り','青いリンゴ','Party is over','in the pokect']
   },
   {
     id: 's16', tour: 'ap bank fes \'25 〜社会と暮らしと音楽と〜', date: '2025-02-15',
-    venue: '', prefecture: '東京都', seat: '',
-    companions: [], rating: 0, tags: ['遠征','野外'], situation: '', memo: '',
+    venue: '東京ドーム', prefecture: '東京都', seat: 'スタンド1列目',
+    companions: ['たーさん、AIKAさん'], rating: 5, tags: ['ドーム'],
+    situation: 'みんなで参加できたライブ、席は違えどとっても楽しかった',
+    memo: 'スタンドだけどアリーナの真横の段もないところで特別席みたいだった\nB\'zもかっこよかったしスガシカオのRealFaceも盛り上がったわね！',
     photos: [], ticketImage: null,
     songs: ['海にて、心は裸になりたがる','HANABI','タガタメ','彩り','HERO','擬態','Brand new planet','街の風景']
   },
   {
     id: 's17', tour: 'ap bank fes \'25 〜社会と暮らしと音楽と〜', date: '2025-02-16',
-    venue: '', prefecture: '東京都', seat: '',
-    companions: [], rating: 0, tags: ['遠征','野外'], situation: '', memo: '',
+    venue: '東京ドーム', prefecture: '東京都', seat: 'スタンド30列ぐらい',
+    companions: ['たーさん、AIKAさん'], rating: 5, tags: ['ドーム'],
+    situation: 'みんなでライブがとても楽しかった',
+    memo: 'タガタメはしばらくいいと贅沢言ったりして。街の風景みたいなレア曲はまたぜひやってほしいライブ終わってご飯食べてもう一度ドームに戻った。そこで広島から来たよっぱらいお姉さんとりくちゃんと写真撮ったな',
     photos: [], ticketImage: null,
     songs: ['海にて、心は裸になりたがる','HANABI','タガタメ','彩り','HERO','擬態','Brand new planet','街の風景','くるみ']
   }
@@ -862,10 +896,43 @@ function saveConcertForm() {
 // ===== Export / Import =====
 function exportData() {
   const json = JSON.stringify(getConcerts(), null, 2);
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([json], {type:'application/json'}));
-  a.download = `mrc-record-${new Date().toISOString().slice(0,10)}.json`;
-  a.click();
+
+  // クリップボードにコピー（ダウンロードがブロックされる場合の代替）
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(json).then(() => {
+      showToast('データをクリップボードにコピーしました！');
+    }).catch(() => {});
+  }
+
+  // ダウンロードも試みる
+  try {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([json], {type:'application/json'}));
+    a.download = `mrc-record-${new Date().toISOString().slice(0,10)}.json`;
+    a.click();
+  } catch(e) {}
+
+  // モーダルで表示（コピーできない場合の最終手段）
+  let modal = document.getElementById('exportModal');
+  if (!modal) {
+    modal = document.createElement('div');
+    modal.id = 'exportModal';
+    modal.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;';
+    modal.innerHTML = `
+      <div style="background:#1a1a1a;border:1px solid #333;border-radius:12px;padding:24px;max-width:600px;width:100%;max-height:80vh;display:flex;flex-direction:column;gap:12px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <h3 style="color:#fff;margin:0;">エクスポートデータ</h3>
+          <button onclick="document.getElementById('exportModal').remove()" style="background:none;border:none;color:#999;font-size:20px;cursor:pointer;">✕</button>
+        </div>
+        <p style="color:#aaa;font-size:13px;margin:0;">下のテキストを全選択してコピーしてください（Cmd+A → Cmd+C）</p>
+        <textarea id="exportTextarea" style="flex:1;min-height:300px;background:#0d0d0d;color:#eee;border:1px solid #444;border-radius:8px;padding:12px;font-size:12px;font-family:monospace;resize:none;" readonly>${json}</textarea>
+        <button onclick="document.getElementById('exportTextarea').select();document.execCommand('copy');showToast('コピーしました！');" style="background:#e8002d;color:#fff;border:none;border-radius:8px;padding:12px;cursor:pointer;font-size:14px;font-weight:700;">テキストをコピー</button>
+      </div>`;
+    document.body.appendChild(modal);
+    modal.addEventListener('click', e => { if(e.target === modal) modal.remove(); });
+  }
+  modal.style.display = 'flex';
+  setTimeout(() => document.getElementById('exportTextarea')?.select(), 100);
 }
 
 function importData(file) {
