@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>私のミスチル記録</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="header-title">
+        <span class="header-icon">🎸</span>
+        <div>
+          <h1>私のミスチル記録</h1>
+          <p class="header-subtitle">Mr.Children Concert Archive</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="btn btn-ghost btn-sm" id="importBtn">📥 インポート</button>
+        <button class="btn btn-ghost btn-sm" id="exportBtn">📤 エクスポート</button>
+        <input type="file" id="importFile" accept=".json" hidden>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tab Navigation -->
+  <nav class="tab-nav">
+    <div class="tab-nav-inner">
+      <button class="tab-btn active" data-tab="timeline">📅 年表</button>
+      <button class="tab-btn" data-tab="analysis">📊 参戦分析</button>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- ===== Timeline Tab ===== -->
+    <div class="tab-content active" id="tab-timeline">
+      <div class="tab-header">
+        <div>
+          <h2 class="tab-title">ライブ年表</h2>
+          <p class="tab-desc">あなたとMr.Childrenの歩み</p>
+        </div>
+        <button class="btn btn-primary" id="addConcertBtn">＋ ライブを追加</button>
+      </div>
+
+      <div id="timelineEmpty" class="empty-state" style="display:none">
+        <div class="empty-icon">🎵</div>
+        <h3>まだライブ記録がありません</h3>
+        <p>「ライブを追加」ボタンから初参戦を登録しましょう！</p>
+      </div>
+
+      <div id="timelineContainer" class="timeline-container"></div>
+    </div>
+
+    <!-- ===== Analysis Tab ===== -->
+    <div class="tab-content" id="tab-analysis">
+      <div class="tab-header">
+        <div>
+          <h2 class="tab-title">参戦分析</h2>
+          <p class="tab-desc">あなたの参戦パターンを可視化</p>
+        </div>
+      </div>
+
+      <div id="analysisEmpty" class="empty-state" style="display:none">
+        <div class="empty-icon">📊</div>
+        <h3>データが不足しています</h3>
+        <p>年表にライブを登録すると分析が表示されます</p>
+      </div>
+
+      <div id="analysisContent">
+        <!-- Summary Cards -->
+        <div class="stats-grid" id="statsGrid"></div>
+
+        <!-- Charts Grid -->
+        <div class="charts-grid">
+          <div class="chart-card">
+            <h3 class="chart-title">年別参加数</h3>
+            <div class="chart-wrap"><canvas id="yearlyChart"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <h3 class="chart-title">会場ランキング Top5</h3>
+            <div class="chart-wrap"><canvas id="venueChart"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <h3 class="chart-title">季節分布</h3>
+            <div class="chart-wrap"><canvas id="seasonChart"></canvas></div>
+          </div>
+          <div class="chart-card">
+            <h3 class="chart-title">累計参戦推移</h3>
+            <div class="chart-wrap"><canvas id="cumulativeChart"></canvas></div>
+          </div>
+        </div>
+
+        <!-- Destiny Graph -->
+        <div class="chart-card full-width" style="margin-bottom:16px">
+          <h3 class="chart-title">参戦運命グラフ</h3>
+          <p class="chart-subtitle">あなたのミスチル人生の軌跡</p>
+          <div class="chart-wrap-tall"><canvas id="destinyChart"></canvas></div>
+          <div id="destinyAnnotations" class="destiny-annotations"></div>
+        </div>
+
+        <!-- Song Ranking -->
+        <div class="chart-card full-width" style="margin-bottom:16px">
+          <h3 class="chart-title">ライブで聴いた曲ランキング</h3>
+          <p class="chart-subtitle">参戦したライブで演奏された回数トップ15</p>
+          <div id="songRankingList" class="song-ranking-list"></div>
+        </div>
+
+        <!-- Type Diagnosis -->
+        <div class="diagnosis-section">
+          <h3 class="section-title">あなたの参戦タイプ診断</h3>
+          <p class="section-subtitle">参戦履歴から自動判定</p>
+          <div id="diagnosisCards" class="diagnosis-cards"></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ===== Add/Edit Concert Modal ===== -->
+  <div class="modal-overlay" id="concertModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="modalTitle">ライブを追加</h2>
+        <button class="modal-close" id="modalClose">&times;</button>
+      </div>
+      <form class="modal-form" id="concertForm" autocomplete="off">
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label>ツアー名 <span class="required">*</span></label>
+            <input type="text" id="f-tour" placeholder="例：ヒカリノアトリエ" required>
+          </div>
+          <div class="form-group">
+            <label>日付 <span class="required">*</span></label>
+            <input type="date" id="f-date" required>
+          </div>
+          <div class="form-group">
+            <label>会場名 <span class="required">*</span></label>
+            <input type="text" id="f-venue" placeholder="例：東京ドーム" required>
+          </div>
+          <div class="form-group">
+            <label>都道府県</label>
+            <select id="f-prefecture">
+              <option value="">選択してください</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>座席</label>
+            <input type="text" id="f-seat" placeholder="例：アリーナA列">
+          </div>
+          <div class="form-group">
+            <label>評価</label>
+            <div class="star-rating" id="starRating">
+              <span class="star" data-val="1">★</span>
+              <span class="star" data-val="2">★</span>
+              <span class="star" data-val="3">★</span>
+              <span class="star" data-val="4">★</span>
+              <span class="star" data-val="5">★</span>
+            </div>
+            <input type="hidden" id="f-rating" value="0">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>同行者（カンマ区切り）</label>
+          <input type="text" id="f-companions" placeholder="例：友人A, 友人B">
+        </div>
+
+        <div class="form-group">
+          <label>ライブで歌った曲（カンマ区切り）</label>
+          <input type="text" id="f-songs" placeholder="例：Tomorrow never knows, 名もなき詩">
+        </div>
+
+        <div class="form-group">
+          <label>当時の自分の状況</label>
+          <textarea id="f-situation" rows="2" placeholder="例：転職を考えていた時期。毎日不安で..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>感想・思い出メモ</label>
+          <textarea id="f-memo" rows="3" placeholder="例：桜井さんの声が心に刺さって、気づいたら泣いていた..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>タグ</label>
+          <div class="tag-checkboxes" id="tagCheckboxes">
+            <label class="tag-check"><input type="checkbox" value="一人参戦"> 一人参戦</label>
+            <label class="tag-check"><input type="checkbox" value="遠征"> 遠征</label>
+            <label class="tag-check"><input type="checkbox" value="誕生日"> 誕生日</label>
+            <label class="tag-check"><input type="checkbox" value="記念日"> 記念日</label>
+            <label class="tag-check"><input type="checkbox" value="ドーム"> ドーム</label>
+            <label class="tag-check"><input type="checkbox" value="アリーナ"> アリーナ</label>
+            <label class="tag-check"><input type="checkbox" value="スタジアム"> スタジアム</label>
+            <label class="tag-check"><input type="checkbox" value="ホール"> ホール</label>
+            <label class="tag-check"><input type="checkbox" value="野外"> 野外</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>チケット画像</label>
+          <input type="file" id="f-ticket" accept="image/*" hidden>
+          <button type="button" class="btn btn-ghost btn-sm" id="ticketUploadBtn">📷 チケット画像を追加</button>
+          <img id="ticketPreview" class="preview-img" style="display:none" alt="チケット">
+          <button type="button" class="btn btn-ghost btn-sm" id="ticketClearBtn" style="display:none">✕ 削除</button>
+        </div>
+
+        <div class="form-group">
+          <label>写真</label>
+          <input type="file" id="f-photos" accept="image/*" multiple hidden>
+          <button type="button" class="btn btn-ghost btn-sm" id="photosUploadBtn">🖼 写真を追加</button>
+          <div id="photosPreview" class="photos-preview"></div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-ghost" id="cancelBtn">キャンセル</button>
+          <button type="submit" class="btn btn-primary">保存する</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ===== Concert Detail Modal ===== -->
+  <div class="modal-overlay" id="detailModal">
+    <div class="modal modal-wide">
+      <div class="modal-header">
+        <h2 id="detailTitle"></h2>
+        <button class="modal-close" id="detailClose">&times;</button>
+      </div>
+      <div class="modal-body" id="detailBody"></div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" id="detailDeleteBtn">削除</button>
+        <button class="btn btn-primary" id="detailEditBtn">編集</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
